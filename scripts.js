@@ -42,11 +42,15 @@ console.log(containsS)
 
 //Creating Object mapping
 const nameToProvince= names.reduce((obj,name,index)=>{
+  if(index< provinces.length){
   obj[name]= provinces[index]
+  }
   return obj
 }, {})
 console.log(nameToProvince)
-/** 
+
+//Advanced Exercises
+
 //Log Products
 console.log(products.map((product)=> product.product))
 
@@ -54,8 +58,7 @@ console.log(products.map((product)=> product.product))
 console.log(products.filter((product)=>product.product.length<=5))
 
 //Price manupulation
-const filteredProducts = products.filter((product) => product.price!== '' && product.price!== ')
-const totalPrice = filteredProducts.reduce((sum, product) => sum + (typeof product.price === 'tring'? parseInt(product.price) : product.price), 0);
+const totalPrice = filteredProducts.reduce((sum, product) => sum + (typeof product.price === 'string'? parseInt(product.price) : product.price), 0);
 console.log(`Total price: ${totalPrice}`);
 
 //Find Extremes in prices
@@ -65,5 +68,7 @@ const maxPrice = Math.max(...prices);
 console.log(`Highest: ${maxPrice}. Lowest: ${minPrice}.`);
 
 //Object Transformation
-console.log(product.reduce((obj, product)=>))
-**/ 
+console.log(products.reduce((obj, product) => {
+  obj[product.product] = { name: product.product, price: typeof product.price === 'string'? parseInt(product.price) : product.price };
+  return obj;
+}, {}));
