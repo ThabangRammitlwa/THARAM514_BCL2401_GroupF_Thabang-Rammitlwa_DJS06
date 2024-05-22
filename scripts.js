@@ -13,3 +13,17 @@ const products = [
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
 ]
+//forEach basics
+names.forEach((name)=> console.log(name))
+provinces.forEach((province)=>console.log(province))
+
+for (let i = 0; i<names.length;i++){
+  console.log(`${names[i]} (${provinces[i]})`)
+}
+//Uppercase Transformation
+const uppercaseProvinces= provinces.map((province)=>province.toUpperCase())
+console.log(uppercaseProvinces)
+
+//Name Lengths
+const nameLengths = names.map((name) => name.length)
+console.log(nameLegnths);
