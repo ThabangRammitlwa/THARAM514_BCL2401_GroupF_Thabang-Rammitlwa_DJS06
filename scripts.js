@@ -27,3 +27,22 @@ console.log(uppercaseProvinces)
 //Name Lengths
 const nameLengths = names.map((name) => name.length)
 console.log(nameLegnths);
+
+//Sorting
+provinces.sort()
+console.log (provinces)
+
+//Filtering Cape
+const filteredProvinces=provinces.filter((province)=>!province.includes('cape'))
+console.log(`Remaining provinces:${filteredProvinces.length}`)
+
+//Finding 'S'
+const containsS = names.map((name)=>name.includes('S'))
+console.log(containsS)
+
+//Creating Object mapping
+const nameToProvince= names.reduce((obj,name,index)=>{
+  obj[name]= provinces[index]
+  return obj
+}, {})
+console.log(nameToProvince)
