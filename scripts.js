@@ -25,8 +25,8 @@ const uppercaseProvinces= provinces.map((province)=>province.toUpperCase())
 console.log(uppercaseProvinces)
 
 //Name Lengths
-const nameLengths = names.map((name) => name.length)
-console.log(nameLegnths);
+const nameLengths = names.map(name => name.length)
+console.log(nameLengths);
 
 //Sorting
 provinces.sort()
@@ -46,3 +46,24 @@ const nameToProvince= names.reduce((obj,name,index)=>{
   return obj
 }, {})
 console.log(nameToProvince)
+/** 
+//Log Products
+console.log(products.map((product)=> product.product))
+
+//Filter by Name 
+console.log(products.filter((product)=>product.product.length<=5))
+
+//Price manupulation
+const filteredProducts = products.filter((product) => product.price!== '' && product.price!== ')
+const totalPrice = filteredProducts.reduce((sum, product) => sum + (typeof product.price === 'tring'? parseInt(product.price) : product.price), 0);
+console.log(`Total price: ${totalPrice}`);
+
+//Find Extremes in prices
+const prices = filteredProducts.map((product) => typeof product.price === 'tring'? parseInt(product.price) : product.price);
+const minPrice = Math.min(...prices);
+const maxPrice = Math.max(...prices);
+console.log(`Highest: ${maxPrice}. Lowest: ${minPrice}.`);
+
+//Object Transformation
+console.log(product.reduce((obj, product)=>))
+**/ 
