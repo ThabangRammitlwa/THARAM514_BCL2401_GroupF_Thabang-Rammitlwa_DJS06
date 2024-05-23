@@ -58,11 +58,12 @@ console.log(products.map((product)=> product.product))
 console.log(products.filter((product)=>product.product.length<=5))
 
 //Price manupulation
-const totalPrice = filteredProducts.reduce((sum, product) => sum + (typeof product.price === 'string'? parseInt(product.price) : product.price), 0);
-console.log(`Total price: ${totalPrice}`);
-
+const filteredProducts = products.filter((product) => product.price!== '' && product.price!== '');
+console.log(filteredProducts)
+const totalPrice = filteredProducts.reduce((sum, product) => sum + (typeof product.price === 'string'? parseInt(product.price, 10) : product.price), 0);
+console.log(totalPrice)
 //Find Extremes in prices
-const prices = filteredProducts.map((product) => typeof product.price === 'tring'? parseInt(product.price) : product.price);
+const prices = filteredProducts.map((product) => typeof product.price === 'string'? parseInt(product.price) : product.price);
 const minPrice = Math.min(...prices);
 const maxPrice = Math.max(...prices);
 console.log(`Highest: ${maxPrice}. Lowest: ${minPrice}.`);
